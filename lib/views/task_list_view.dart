@@ -34,7 +34,12 @@ class TaskListView extends StatelessWidget {
                       color: Colors.red.shade300,
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Center(child: Icon(Icons.delete,color: Colors.red.shade700,),)),
+                    child: Center(
+                      child: Icon(
+                        Icons.delete,
+                        color: Colors.red.shade700,
+                      ),
+                    )),
                 child: Container(
                   decoration: BoxDecoration(
                       color: appViewModel.clrLv1,
@@ -58,6 +63,11 @@ class TaskListView extends StatelessWidget {
                           fontSize: 17,
                           fontWeight: FontWeight.w500),
                     ),
+                    trailing: IconButton(
+                        onPressed: () {
+                          appViewModel.deleteTask(index);
+                        },
+                        icon: Icon(Icons.delete, color: appViewModel.clrLv3)),
                   ),
                 ),
               );
